@@ -1,5 +1,6 @@
 package players.spellcasters;
 
+import eNums.Armour;
 import eNums.Creature;
 import eNums.Spell;
 import eNums.Weapon;
@@ -46,9 +47,9 @@ public class WarlockTest {
 
     @Test
     public void canUseACreatureForDefense(){
-        dwarve = new Dwarve(600, Weapon.AXE);
+        dwarve = new Dwarve(600, Weapon.AXE, Armour.GLOVES);
         warlock.fight(dwarve);
-        assertEquals(225, warlock.getHealth());
+        assertEquals(215, warlock.getHealth());
     }
 
 }

@@ -1,5 +1,6 @@
 package players.fighters;
 
+import eNums.Armour;
 import eNums.Creature;
 import eNums.Spell;
 import eNums.Weapon;
@@ -17,7 +18,7 @@ public class KnightTest {
 
     @Before
     public void before(){
-        knight = new Knight(150, Weapon.AXE);
+        knight = new Knight(150, Weapon.AXE, Armour.CHAIN_MAIL);
     }
 
     @Test
@@ -32,7 +33,7 @@ public class KnightTest {
 
     @Test
     public void weaponHasDamageValue(){
-        assertEquals(30, knight.getWeapon().getDamage());
+        assertEquals(200, knight.getWeapon().getDamage());
     }
 
     @Test
@@ -45,7 +46,7 @@ public class KnightTest {
     public void knightCanFight(){
         warlock = new Warlock(300, Spell.FIREBALL, Creature.DRAGON);
         knight.fight(warlock);
-        assertEquals(105, knight.getHealth());
+        assertEquals(150, knight.getHealth());
     }
 
 

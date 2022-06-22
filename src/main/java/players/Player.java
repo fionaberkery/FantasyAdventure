@@ -27,11 +27,11 @@ public abstract class Player implements  IAttack{
             setHealth(newHealth);
         }}
 
-    public String completeRoom(Room room){
+    public boolean completeRoom(Room room){
         if (room.getTreasuresCount() == 0 && room.getEnemiesCount() == 0){
-            return "well done!! room completed";
+            return true;
         } else {
-            return "room incomplete... keep trying";
+            return false;
         }
     }
 

@@ -1,5 +1,6 @@
 package players;
 
+import eNums.Armour;
 import eNums.HealingTool;
 import eNums.Weapon;
 import org.junit.Before;
@@ -20,7 +21,7 @@ public class ClericTest {
 
     @Test
     public void canHealAPlayer(){
-        player = new Dwarve(100, Weapon.AXE);
+        player = new Dwarve(100, Weapon.AXE, Armour.HELMET);
         cleric.healPlayer(player);
         assertEquals(150, player.getHealth());
     }

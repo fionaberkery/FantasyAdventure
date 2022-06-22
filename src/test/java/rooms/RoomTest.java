@@ -22,6 +22,7 @@ public class RoomTest {
         treasures = new ArrayList();
         treasures.add(Treasure.GEMS);
         treasures.add(Treasure.GOLD);
+        enemies = new ArrayList();
         enemies.add(Enemy.ORC);
         enemies.add(Enemy.TROLL);
         forest = new Room("Forest", treasures, enemies);
@@ -37,13 +38,13 @@ public class RoomTest {
     @Test
     public void canAddTreasureToRoom(){
         forest.addTreasure(Treasure.GEMS);
-        assertEquals(1, forest.getTreasuresCount());
+        assertEquals(3, forest.getTreasuresCount());
     }
 
     @Test
     public void canAddEnemyToRoom(){
         forest.addEnemy(Enemy.ORC);
-        assertEquals(1, forest.getEnemiesCount());
+        assertEquals(3, forest.getEnemiesCount());
     }
 
 //    @Test

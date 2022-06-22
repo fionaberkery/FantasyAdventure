@@ -1,5 +1,6 @@
 package players.fighters;
 
+import eNums.Armour;
 import eNums.Enemy;
 import eNums.Treasure;
 import eNums.Weapon;
@@ -20,7 +21,7 @@ public class BarbarianTest {
 
     @Before
     public void before(){
-        barbarian = new Barbarian(120, Weapon.AXE);
+        barbarian = new Barbarian(120, Weapon.AXE, Armour.CHAIN_MAIL);
     }
 
     @Test
@@ -35,7 +36,7 @@ public class BarbarianTest {
 
     @Test
     public void weaponHasDamageValue(){
-        assertEquals(30, barbarian.getWeapon().getDamage());
+        assertEquals(200, barbarian.getWeapon().getDamage());
     }
 
     @Test
@@ -53,7 +54,7 @@ public class BarbarianTest {
         enemies.add(Enemy.ORC);
         enemies.add(Enemy.TROLL);
         room = new Room("Forest", treasures, enemies);
-        assertEquals("room incomplete... keep trying", barbarian.completeRoom(room));
+        assertEquals(false, barbarian.completeRoom(room));
     }
 
     @Test
@@ -65,7 +66,7 @@ public class BarbarianTest {
         room = new Room("Forest", treasures, enemies);
         room.removeTreasure(Treasure.GEMS);
         room.defeatEnemy(Enemy.ORC);
-        assertEquals("well done!! room completed", barbarian.completeRoom(room));
+        assertEquals(true, barbarian.completeRoom(room));
     }
 
 }

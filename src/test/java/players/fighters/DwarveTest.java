@@ -1,5 +1,6 @@
 package players.fighters;
 
+import eNums.Armour;
 import eNums.Weapon;
 import org.junit.Before;
 import org.junit.Test;
@@ -15,7 +16,7 @@ public class DwarveTest {
 
     @Before
     public void before(){
-        dwarve = new Dwarve(100, Weapon.AXE);
+        dwarve = new Dwarve(100, Weapon.AXE, Armour.GLOVES);
     }
 
     @Test
@@ -30,7 +31,7 @@ public class DwarveTest {
 
     @Test
     public void weaponHasDamageValue(){
-        assertEquals(30, dwarve.getWeapon().getDamage());
+        assertEquals(200, dwarve.getWeapon().getDamage());
     }
 
     @Test
