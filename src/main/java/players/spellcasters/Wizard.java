@@ -1,4 +1,11 @@
 package players.spellcasters;
 
-public class Wizard {
+import eNums.Creature;
+import eNums.Spell;
+
+public class Wizard extends SpellCaster{
+
+    public Wizard(int health, Spell spell, Creature creature) {
+        super(health, spell, creature);
+    }
 }

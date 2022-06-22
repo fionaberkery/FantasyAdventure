@@ -22,7 +22,7 @@ public abstract class Fighter extends Player {
     }
 
     // the computer's weapon is the argument
-    public void fight(Weapon weapon){
+    public void fight(IAttack attackMethod){
         int playersWeapon = getWeapon().getDamage();
         int computersWeapon = weapon.getDamage();
         if (computersWeapon >= playersWeapon){
