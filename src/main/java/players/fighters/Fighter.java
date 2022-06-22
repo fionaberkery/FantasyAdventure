@@ -1,9 +1,10 @@
 package players.fighters;
 
 import eNums.Weapon;
+import interfaces.IAttack;
 import players.Player;
 
-public abstract class Fighter extends Player {
+public abstract class Fighter extends Player implements IAttack {
 
     Weapon weapon;
 
@@ -21,14 +22,9 @@ public abstract class Fighter extends Player {
         this.weapon = newWeapon;
     }
 
-    // the computer's weapon is the argument
-    public void fight(IAttack attackMethod){
-        int playersWeapon = getWeapon().getDamage();
-        int computersWeapon = weapon.getDamage();
-        if (computersWeapon >= playersWeapon){
-            int newHealth = getHealth() - weapon.getDamage();
-            setHealth(newHealth);
-        }
+    public int getAttackDamage() {
+        return this.weapon.getDamage();
     }
 
 }
+

@@ -3,7 +3,7 @@ package eNums;
 public enum Weapon {
 
     SWORD(50),
-    AXE(30),
+    AXE(200),
     CLUB(10);
 
     private final int damage;

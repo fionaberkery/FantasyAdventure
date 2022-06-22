@@ -1,6 +1,8 @@
 package players;
 
-public abstract class Player {
+import interfaces.IAttack;
+
+public abstract class Player implements  IAttack{
 
     private int health;
 
@@ -15,6 +17,15 @@ public abstract class Player {
     protected void setHealth(int newHealth) {
         this.health = newHealth;
     }
+
+    public void fight(IAttack opponent){
+        int playerAttack = getAttackDamage();
+        int computersAttack = opponent.getAttackDamage();
+        if (computersAttack >= playerAttack){
+            int newHealth = getHealth() - (computersAttack - playerAttack);
+            setHealth(newHealth);
+        }}
+
 
 
 }

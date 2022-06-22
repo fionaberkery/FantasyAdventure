@@ -2,14 +2,17 @@ package players.spellcasters;
 
 import eNums.Creature;
 import eNums.Spell;
+import eNums.Weapon;
 import org.junit.Before;
 import org.junit.Test;
+import players.fighters.Dwarve;
 
 import static org.junit.Assert.*;
 
 public class WarlockTest {
 
     Warlock warlock;
+    Dwarve dwarve;
 
     @Before
     public void before(){
@@ -42,9 +45,10 @@ public class WarlockTest {
     }
 
     @Test
-    public void canCastASpell(){
-        warlock.castSpell();
-
+    public void canUseACreatureForDefense(){
+        dwarve = new Dwarve(600, Weapon.AXE);
+        warlock.fight(dwarve);
+        assertEquals(225, warlock.getHealth());
     }
 
 }

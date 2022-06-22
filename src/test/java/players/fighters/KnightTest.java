@@ -1,14 +1,19 @@
 package players.fighters;
 
+import eNums.Creature;
+import eNums.Spell;
 import eNums.Weapon;
 import org.junit.Before;
 import org.junit.Test;
+import players.spellcasters.SpellCaster;
+import players.spellcasters.Warlock;
 
 import static org.junit.Assert.*;
 
 public class KnightTest {
 
     Knight knight;
+    Warlock warlock;
 
     @Before
     public void before(){
@@ -37,10 +42,12 @@ public class KnightTest {
     }
 
     @Test
-    public void playerCanFight(){
-        knight.fight(Weapon.SWORD);
-        assertEquals(100, knight.getHealth());
+    public void knightCanFight(){
+        warlock = new Warlock(300, Spell.FIREBALL, Creature.DRAGON);
+        knight.fight(warlock);
+        assertEquals(105, knight.getHealth());
     }
+
 
 
 }

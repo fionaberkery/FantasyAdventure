@@ -1,9 +1,11 @@
 package players.spellcasters;
 import eNums.Creature;
 import eNums.Spell;
+import interfaces.IAttack;
+import interfaces.IDefend;
 import players.Player;
 
-public class SpellCaster extends Player {
+public class SpellCaster extends Player implements IAttack, IDefend {
 
     private Spell spell;
     private Creature creature;
@@ -30,12 +32,12 @@ public class SpellCaster extends Player {
         this.creature = newCreature;
     }
 
-    public void castSpell(IAttack){
-        int playersSpell = getSpell().getDamage();
-        int computersAttack = weapon.getDamage();
-        if (computersWeapon >= playersWeapon){
-            int newHealth = getHealth() - weapon.getDamage();
-            setHealth(newHealth);
-        }
+    public int getAttackDamage(){
+        return this.spell.getDamage() + getDefenceValue();
+    }
+
+    @Override
+    public int getDefenceValue() {
+        return this.creature.getDefend();
     }
 }
