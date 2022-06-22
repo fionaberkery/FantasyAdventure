@@ -1,6 +1,7 @@
 package players;
 
 import interfaces.IAttack;
+import rooms.Room;
 
 public abstract class Player implements  IAttack{
 
@@ -25,6 +26,14 @@ public abstract class Player implements  IAttack{
             int newHealth = getHealth() - (computersAttack - playerAttack);
             setHealth(newHealth);
         }}
+
+    public String completeRoom(Room room){
+        if (room.getTreasuresCount() == 0 && room.getEnemiesCount() == 0){
+            return "well done!! room completed";
+        } else {
+            return "room incomplete... keep trying";
+        }
+    }
 
 
 
